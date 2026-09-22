@@ -1,9 +1,0 @@
-# TechStore crawler policy
-# Replace the sitemap host with the real production domain before deployment.
-User-agent: *
-
-# Public HTML pages and product-detail URLs are crawlable.
-# Private/utility pages use <meta name="robots" content="noindex,follow">
-# so crawlers can read the noindex directive. robots.txt is not access control.
-
-Sitemap: https://shubhamnarsale.github.io/TechStore/sitemap.xml
