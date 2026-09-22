@@ -1,0 +1,9 @@
+# TechStore crawler policy
+# GitHub Pages production crawler policy.
+User-agent: *
+
+# Public HTML pages and product-detail URLs are crawlable.
+# Private/utility pages use <meta name="robots" content="noindex,follow">
+# so crawlers can read the noindex directive. robots.txt is not access control.
+
+Sitemap: https://shubhamnarsale.github.io/TechStore/sitemap.xml

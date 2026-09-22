@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | TechStore</title>
+    <meta name="description" content="TechStore administrator dashboard for managing demo store activity.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+<header class="admin-topbar">
+    <div class="container admin-topbar-inner">
+        <a href="index.html" class="logo"><span class="logo-icon">T</span><span>Tech<span class="blue">Store</span></span></a>
+        <div class="admin-topbar-actions">
+            <a href="index.html" class="admin-site-link">View Store</a>
+            <button id="adminLogoutBtn" type="button" class="btn btn-danger" style="display:none;">Logout</button>
+        </div>
+    </div>
+</header>
+
+<main class="admin-main">
+<div class="container">
+    <section id="adminLoginView" class="admin-login-card">
+        <div class="admin-login-icon">🔐</div>
+        <span class="dashboard-eyebrow">TECHSTORE ADMIN</span>
+        <h1>Administrator Login</h1>
+        <p>Demo administration panel for the TechStore college project.</p>
+        <form id="adminLoginForm" class="admin-login-form" novalidate>
+            <label for="adminEmail">Admin Email</label>
+            <input id="adminEmail" type="email" value="admin@techstore.com" autocomplete="username" required>
+            <label for="adminPassword">Password</label>
+            <input id="adminPassword" type="password" value="Admin@123" autocomplete="current-password" required>
+            <div id="adminLoginError" class="auth-error"></div>
+            <button class="btn btn-primary" type="submit">Login to Dashboard</button>
+        </form>
+        <div class="admin-demo-note"><strong>Demo credentials</strong><br>Email: admin@techstore.com<br>Password: Admin@123</div>
+    </section>
+
+    <section id="adminDashboardView" style="display:none;">
+        <div class="admin-heading">
+            <div><span class="dashboard-eyebrow">ADMINISTRATION</span><h1>TechStore Dashboard</h1><p>Monitor users, products, orders and store activity.</p></div>
+            <div class="admin-session-badge">🛡️ Administrator</div>
+        </div>
+
+        <div class="admin-stat-grid">
+            <div class="admin-stat-card"><span>📦</span><div><strong id="adminOrderCount">0</strong><small>Total Orders</small></div></div>
+            <div class="admin-stat-card"><span>👥</span><div><strong id="adminUserCount">0</strong><small>Registered Users</small></div></div>
+            <div class="admin-stat-card"><span>💻</span><div><strong id="adminProductCount">0</strong><small>Products</small></div></div>
+            <div class="admin-stat-card"><span>₹</span><div><strong id="adminSalesTotal">₹0</strong><small>Order Revenue</small></div></div>
+        </div>
+
+        <div class="admin-grid-two">
+            <section class="admin-panel">
+                <div class="admin-panel-heading"><div><h2>Recent Orders</h2><p>Update order status for the demo store.</p></div><button class="btn btn-secondary" id="adminRefreshBtn" type="button">Refresh</button></div>
+                <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody id="adminOrdersTable"></tbody></table></div>
+            </section>
+            <section class="admin-panel">
+                <div class="admin-panel-heading"><div><h2>Registered Users</h2><p>Accounts currently stored in LocalStorage.</p></div></div>
+                <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>ID</th></tr></thead><tbody id="adminUsersTable"></tbody></table></div>
+            </section>
+        </div>
+
+        <section class="admin-panel">
+            <div class="admin-panel-heading"><div><h2>Product Catalog</h2><p>Current catalog loaded from the TechStore product database.</p></div></div>
+            <div class="admin-product-grid" id="adminProductGrid"></div>
+        </section>
+
+        <div class="admin-note"><strong>Important:</strong> This is a front-end demonstration. GitHub Pages has no server/database, so admin authentication and data management are stored in the browser's LocalStorage/SessionStorage and are not suitable for real production security.</div>
+    </section>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

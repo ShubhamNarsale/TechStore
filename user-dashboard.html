@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | TechStore</title>
+    <meta name="description" content="Manage your TechStore account, orders, wishlist and shopping activity.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <div class="container navbar">
+        <a href="index.html" class="logo"><span class="logo-icon">T</span><span>Tech<span class="blue">Store</span></span></a>
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+            <a href="deals.html">Deals</a>
+            <a href="blog.html">Blog</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="wishlist.html" class="icon-btn" title="Wishlist">♡<span class="badge" id="wishlistCount">0</span></a>
+            <a href="cart.html" class="icon-btn" title="Cart">🛒<span class="badge" id="cartCount">0</span></a>
+            <a href="compare.html" class="icon-btn" title="Compare">⚖️<span class="badge" id="compareCount">0</span></a>
+            <a href="user-dashboard.html" class="icon-btn active" title="Dashboard"><span class="account-icon">👤</span></a>
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+        </div>
+    </div>
+</header>
+
+<main>
+<section class="dashboard-page">
+    <div class="container" id="userDashboardContainer">
+        <div class="dashboard-hero-card">
+            <div>
+                <span class="dashboard-eyebrow">MY ACCOUNT</span>
+                <h1>Welcome, <span id="dashboardUserName">Customer</span>!</h1>
+                <p>Manage your account, orders and shopping activity from one place.</p>
+            </div>
+            <div class="dashboard-avatar" id="dashboardAvatar">T</div>
+        </div>
+
+        <div id="dashboardLoggedOut" class="dashboard-empty" style="display:none;">
+            <div class="dashboard-empty-icon">🔒</div>
+            <h2>Login Required</h2>
+            <p>Please log in to access your dashboard.</p>
+            <a href="login.html" class="btn btn-primary">Go to Login</a>
+        </div>
+
+        <div id="dashboardLoggedIn" style="display:none;">
+            <div class="dashboard-stat-grid">
+                <a href="orders.html" class="dashboard-stat-card"><span>📦</span><div><strong id="dashboardOrderCount">0</strong><small>Total Orders</small></div></a>
+                <a href="wishlist.html" class="dashboard-stat-card"><span>♡</span><div><strong id="dashboardWishlistCount">0</strong><small>Wishlist Items</small></div></a>
+                <a href="cart.html" class="dashboard-stat-card"><span>🛒</span><div><strong id="dashboardCartCount">0</strong><small>Cart Items</small></div></a>
+                <div class="dashboard-stat-card"><span>₹</span><div><strong id="dashboardSpend">₹0</strong><small>Total Spent</small></div></div>
+            </div>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-panel">
+                    <div class="dashboard-panel-heading"><h2>Recent Orders</h2><a href="orders.html">View all</a></div>
+                    <div id="dashboardRecentOrders"></div>
+                </section>
+                <section class="dashboard-panel">
+                    <div class="dashboard-panel-heading"><h2>Quick Actions</h2></div>
+                    <div class="dashboard-action-grid">
+                        <a href="profile.html" class="dashboard-action">👤<strong>My Profile</strong><span>Edit account details</span></a>
+                        <a href="orders.html" class="dashboard-action">📦<strong>My Orders</strong><span>Track your purchases</span></a>
+                        <a href="wishlist.html" class="dashboard-action">♡<strong>Wishlist</strong><span>Saved products</span></a>
+                        <a href="products.html" class="dashboard-action">🛍️<strong>Continue Shopping</strong><span>Browse products</span></a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-account-bar">
+                <div><span>Signed in as</span><strong id="dashboardEmail">—</strong></div>
+                <button class="btn btn-danger" id="dashboardLogoutBtn" type="button">Logout</button>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-bottom"><div class="container"><p>© 2026 TechStore. Smart Technology. Better Choices.</p></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
